@@ -31,7 +31,7 @@
         </form>
         <br>
         <div>
-            Result: 
+            Result: <p> </p> 
         </div>
         <div>
             <a href="age">Age Calculator</a>

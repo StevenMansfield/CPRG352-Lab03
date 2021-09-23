@@ -21,6 +21,7 @@ public class ArithmeticCalculatorServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         getServletContext().getRequestDispatcher("/WEB-INF/arithmeticcalculator.jsp").forward(request, response); 
+        return;
     }
 
     /**
@@ -36,5 +37,11 @@ public class ArithmeticCalculatorServlet extends HttpServlet {
             throws ServletException, IOException {
         String firstnumber = request.getParameter("first_number");
         String secondnumber = request.getParameter("second_number");
+        
+        request.setAttribute("firstNumber", firstnumber);
+        request.setAttribute("secondNumber", secondnumber);
+        
+        getServletContext().getRequestDispatcher("/WEB-INF/arithmeticcalulator.jsp").forward(request, response); 
+        return;
     }
 }
