@@ -60,8 +60,8 @@ public class ArithmeticCalculatorServlet extends HttpServlet {
         }
                 
         try {
-            first_number_int = Integer.parseInt(firstnumber);
-            second_number_int = Integer.parseInt(secondnumber);
+            first_number_int = Integer.parseInt(firstnumber.trim());
+            second_number_int = Integer.parseInt(secondnumber.trim());
         } catch (NumberFormatException e) {
             request.setAttribute("result" , "Invalid.");
             getServletContext().getRequestDispatcher("/WEB-INF/arithmeticcalculator.jsp").forward(request, response); 
